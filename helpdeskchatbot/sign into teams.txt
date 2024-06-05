@@ -1,0 +1,56 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Lesson 2 - A simple topic with a condition and variable (Copy) (Copy)
+    triggerQueries:
+      - How can I sign in to teams
+      - Help me sign into teams
+      - Microsoft teams sign in
+      - How can I sign into my teams account
+
+  actions:
+    - kind: SendActivity
+      id: sendActivity_JqeQyg
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 1
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/step2%20signin.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_O9ZZ48
+      activity:
+
+    - kind: SendActivity
+      id: sendActivity_vK9hkV
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: step 2
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/step%201%20signin.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_T0XHzc
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 3
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/step3%20for%20sign%20in.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_o9p7dw
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 4
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/step%204%20for%20sign%20in.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_2OfFMF
+      activity: **Above images are guided steps on how to Sign into your microsft teams.**
+
+    - kind: BeginDialog
+      id: CKDWnE
+      dialog: cre5d_neximchatbot.topic.ResetConversation

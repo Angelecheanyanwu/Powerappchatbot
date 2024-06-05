@@ -1,0 +1,28 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Lesson 2 - A simple topic with a condition and variable (Copy) (Copy)
+    triggerQueries:
+      - How can I check my calender in teams?
+      - I need to check my calendar in microsoft teams
+      - How do I check my calendar?
+      - Calendar in teams
+
+  actions:
+    - kind: SendActivity
+      id: sendActivity_maeN2Q
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: step 1
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/teams%201.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_4tXWwN
+      activity: **Above are step by step images to Check your calendar on teams**
+
+    - kind: BeginDialog
+      id: CKDWnE
+      dialog: cre5d_neximchatbot.topic.ResetConversation

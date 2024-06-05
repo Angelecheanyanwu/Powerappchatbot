@@ -1,0 +1,69 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Lesson 2 - A simple topic with a condition and variable (Copy) (Copy)
+    triggerQueries:
+      - Help me join a meeting
+      - How can I join a teams meeting ?
+      - How can I join a meeting on microsoft teams?
+      - Help me join a meeting on teams
+      - How can I mute my microphone in a teams meeting ?
+
+  actions:
+    - kind: SendActivity
+      id: sendActivity_II2qbg
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 1
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/teams%201.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_yzV1XV
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 2
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/teams%202.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_BeeuqX
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 3
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/teams%203.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_TLffmY
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 4
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/teams%204.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_SVzPrV
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 5
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/teams%205.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_xXKMOd
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 6
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/teams%206.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_3vObCx
+      activity: **Above are the steps to Join a meeting on teams, also steps to mute your sound before joining a meeting**
+
+    - kind: BeginDialog
+      id: CKDWnE
+      dialog: cre5d_neximchatbot.topic.ResetConversation

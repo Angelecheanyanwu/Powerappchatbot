@@ -1,0 +1,77 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Lesson 2 - A simple topic with a condition and variable (Copy) (Copy)
+    triggerQueries:
+      - How I authenticate on microsoft teams?
+      - Authenticator on teams
+      - Help me with authenticating in microsoft
+      - How can I authenticate
+      - help me Authenticate with app
+
+  actions:
+    - kind: SendActivity
+      id: sendActivity_cRV2VA
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 1
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/auth1.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_hZve8h
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 2
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/auth2.jpg?web=1
+
+    - kind: SendActivity
+      id: sendActivity_6GEzIS
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 3
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/auth3.jpg?web=1
+
+    - kind: SendActivity
+      id: sendActivity_tAwfhI
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 4
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/auth4.jpg?web=1
+
+    - kind: SendActivity
+      id: sendActivity_hUN0ho
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 5
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/auth5.jpg?web=1
+
+    - kind: SendActivity
+      id: sendActivity_7J3Bg1
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 6
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/auth6.jpg?web=1
+
+    - kind: SendActivity
+      id: sendActivity_9EP6iT
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 7
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/auth7y.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_YMg7Yc
+      activity: **Above are step by step images to aid you with authentication**
+
+    - kind: BeginDialog
+      id: CKDWnE
+      dialog: cre5d_neximchatbot.topic.ResetConversation

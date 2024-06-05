@@ -1,0 +1,26 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Lesson 1 - A simple topic (Copy)
+    triggerQueries:
+      - Fill out sysaid form
+      - Submit sysaid report
+      - Sysaid report
+      - My problem wasn't solved
+      - My issue still persists
+      - My issue is not resolved
+      - issue is still there
+      - it did not work
+
+  actions:
+    - kind: SendActivity
+      id: sendActivity_XpUWIr
+      activity: |-
+        **kindly click this to fill out a Sysaid report and an IT personnel will be over immediately** : 
+        http://helpdeskportal:8080/Login.jsp?navLanguage=en-US
+
+    - kind: BeginDialog
+      id: 2E8NZ2
+      dialog: cre5d_neximchatbot.topic.ResetConversation

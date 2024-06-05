@@ -1,0 +1,64 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Lesson 2 - A simple topic with a condition and variable (Copy)
+    triggerQueries:
+      - share a live document in word
+      - share a live document
+      - Live document word
+      - how to share a live document in word
+      - Co-authoring
+      - Coauthoring
+      - How to co-author
+      - Co-authoring in word
+      - How can I co-author?
+      - help me share a live document in word
+      - How can I co-author?
+      - How can I share a live document in word ?
+
+  actions:
+    - kind: SendActivity
+      id: sendActivity_IVHUao
+      activity:
+        text:
+          - |
+            Here is how to do that step by step :
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 1
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/step1.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_AGb4lR
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 2
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/step2.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_gPbSu2
+      activity:
+        value: "Step 3: Search for the user intended for collaboration, see diagram below:"
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 3
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/step3.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_XblRTd
+      activity:
+        attachments:
+          - kind: ImageCardTemplate
+            title: Step 4
+            image: https://neximbank.sharepoint.com/sites/itdteam/shared%20documents/chatbotdata/step4.png?web=1
+
+    - kind: SendActivity
+      id: sendActivity_3vObCx
+      activity: **Above are the steps to Share a live Document on / Co-authoring**
+
+    - kind: BeginDialog
+      id: CKDWnE
+      dialog: cre5d_neximchatbot.topic.ResetConversation

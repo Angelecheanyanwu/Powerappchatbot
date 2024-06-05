@@ -1,0 +1,30 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Lesson 1 - A simple topic (Copy) (Copy)
+    triggerQueries:
+      - I want to speak to IT
+      - Can I talk to someone in IT
+      - Direct me to ITD
+      - Can I have a conversation with IT
+      - Speak to ITD
+      - Talk to ITD
+      - Live chat with IT
+      - Can I speak to ITD
+
+  actions:
+    - kind: InvokeFlowAction
+      id: invokeFlowAction_vdshtY
+      input: {}
+      output: {}
+      flowId: 20a083f8-7bf2-e04e-1726-08d615a4c27b
+
+    - kind: SendActivity
+      id: sendActivity_JMihWF
+      activity: Your request for a live chat has been sent to ITD in **Microsoft Teams**. Kindly open **Microsoft Teams** to continue the live chat with an ITD member.
+
+    - kind: BeginDialog
+      id: 4XeTBI
+      dialog: cre5d_neximchatbot.topic.ResetConversation

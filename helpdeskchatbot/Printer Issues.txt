@@ -1,0 +1,144 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Lesson 2 - A simple topic with a condition and variable
+    triggerQueries:
+      - Unable to print
+      - I can't print
+      - Printer issues
+      - My printer isn't working
+      - I need help with my printer
+      - I cannot print
+      - My printer is not working
+      - How do I fix my printer issues
+
+  actions:
+    - kind: Question
+      id: LbWwpD
+      alwaysPrompt: true
+      variable: init:Topic.Userselection
+      prompt: "Here are possible printer issues.  Please select from the following options and be guided on how to resolve this error. If no option best describes the issue kindly select \"**Other**\":"
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          smartMatchingEnabled: true
+          items:
+            - id: "\"Printer Error\" is displayed "
+              displayName: "\"Printer Error\" is displayed "
+
+            - id: Other
+              displayName: Other
+
+            - id: Printer isn't Powered On
+              displayName: Printer isn't Powered On
+
+            - id: Printer is out of paper 
+              displayName: Printer is out of paper 
+
+            - id: Department Printer isn't selected as Default Printer
+              displayName: Department Printer isn't selected as Default Printer
+
+            - id: Paper Jamming
+              displayName: Paper Jamming
+
+    - kind: ConditionGroup
+      id: HE6JRU
+      conditions:
+        - id: 6G9Hhn
+          condition: =Topic.Userselection = 'cre5d_neximchatbot.topic.Lesson2.main.LbWwpD'.'Printer isn''t Powered On'
+          actions:
+            - kind: SendActivity
+              id: khIIPE
+              activity: |-
+                1. **Locate the power button on the printer. It's usually on the front or side.**
+                2. **Press the power button to turn on the printer.**
+                3. **Wait for the printer to finish its startup process. This may take a few moments.**
+                4. **Once the printer is powered on, you'll usually see lights or a screen indicating it's ready to use.**
+                5. **That's it! Your printer is now turned on and ready for printing.**
+
+        - id: dqf7pu
+          condition: =Topic.Userselection = 'cre5d_neximchatbot.topic.Lesson2.main.LbWwpD'.Other
+          actions:
+            - kind: SendActivity
+              id: X7eulp
+              activity: Please ensure that the printer is connected to the network, Recheck to see that the network cables are fastened tight.
+
+            - kind: BeginDialog
+              id: Afe78E
+              dialog: cre5d_neximchatbot.topic.EndofConversation
+
+        - id: 1QMrFE
+          condition: =Topic.Userselection = 'cre5d_neximchatbot.topic.Lesson2.main.LbWwpD'.'"Printer Error" is displayed '
+          actions:
+            - kind: SendActivity
+              id: jtQo0O
+              activity: |
+                Let's try restrating the printer. Please turn off, wait for a mintute, and then turn it back on. If issue persists let me know.
+
+            - kind: Question
+              id: question_BQz8Yt
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.Var1
+              prompt: Does issue still persist?
+              entity:
+                kind: EmbeddedEntity
+                definition:
+                  kind: ClosedListEntity
+                  items:
+                    - id: Yes
+                      displayName: Yes
+
+                    - id: No
+                      displayName: No
+
+            - kind: ConditionGroup
+              id: conditionGroup_hJTD21
+              conditions:
+                - id: conditionItem_0bSS3Z
+                  condition: =Topic.Var1 = 'cre5d_neximchatbot.topic.Lesson2.main.question_BQz8Yt'.Yes
+                  actions:
+                    - kind: SendActivity
+                      id: sendActivity_yO4SGX
+                      activity: Please restart your computer and that should solve the problem.
+
+        - id: conditionItem_MZSePz
+          condition: =Topic.Userselection = 'cre5d_neximchatbot.topic.Lesson2.main.LbWwpD'.'Department Printer isn''t selected as Default Printer'
+          actions:
+            - kind: SendActivity
+              id: sendActivity_mHZVJd
+              activity: |-
+                1. **Click on "File" in the top-left corner in Microsoft word.**
+                2. **Choose "Print" from the menu.**
+                3. **In the window that pops up, find where it says "Printer" or "Name."**
+                4. **Click on the arrow next to it to see your printer options.**
+                5. **Pick the printer you want to use.**
+
+        - id: conditionItem_iYv9I6
+          condition: =Topic.Userselection = 'cre5d_neximchatbot.topic.Lesson2.main.LbWwpD'.'Paper Jamming'
+          actions:
+            - kind: BeginDialog
+              id: RSk9df
+              dialog: cre5d_neximchatbot.topic.DirectcontacttoIT
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_p6kJgH
+          activity: |-
+            If your printer is indicating that it is "Out of Paper", Please follow these steps:
+            1. Open the printer's papaer tray
+            2. Check if there is paper in the tray and if it's properly aligned to avoid paper jamming
+            3. If the paper is out, add more paper to the tray.
+            4. Close the paper tray and try printing again
+
+        - kind: BeginDialog
+          id: pH9IF9
+          dialog: cre5d_neximchatbot.topic.DirectcontacttoIT
+
+    - kind: BeginDialog
+      id: OMWyLy
+      dialog: cre5d_neximchatbot.topic.ResetConversation

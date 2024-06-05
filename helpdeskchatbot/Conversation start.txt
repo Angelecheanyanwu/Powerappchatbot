@@ -1,0 +1,16 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnConversationStart
+  id: main
+  actions:
+    - kind: SendActivity
+      id: sendMessage_M0LuhV
+      activity:
+        text:
+          - Hello, I'm {System.Bot.Name},  your virtual assistant. **How can I help you today?**
+        speak:
+          - Thanks for calling, how can I help?
+
+    - kind: SendActivity
+      id: sendActivity_qGvaa0
+      activity: If you ever feel the need to have a live chat with a representative of the IT department, feel free to inform me!

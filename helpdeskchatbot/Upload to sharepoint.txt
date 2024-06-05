@@ -1,0 +1,20 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Lesson 2 - A simple topic with a condition and variable (Copy) (Copy)
+    triggerQueries:
+      - How to upload a document to sharepoint
+      - How can I upload a document to SharePoint ?
+      - I have a problem with uploading to sharepoint
+      - Show me how to upload a document to sharepoint
+
+  actions:
+    - kind: SendActivity
+      id: sendActivity_rFDPZH
+      activity: **Above are step by step images to upload a document to sharepoint.** 
+
+    - kind: BeginDialog
+      id: 742Pvk
+      dialog: cre5d_neximchatbot.topic.ResetConversation
